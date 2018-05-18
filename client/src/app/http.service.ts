@@ -19,7 +19,7 @@ export class HttpService {
     }
 
     getSinglePet(id: string){
-        return this._http.get('/pet/' + id);
+        return this._http.get('/pet/detail/' + id);
     }
 
     editSinglePet(editPet){

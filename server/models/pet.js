@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 module.exports = (() => {
 
     const PetSchema = new mongoose.Schema({
-        // _id: Schema.Types.ObjectId,
+        _id: Schema.Types.ObjectId,
         name: {
             type: String,
             required: [true, 'Name feild is Required'],

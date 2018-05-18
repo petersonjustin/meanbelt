@@ -18,7 +18,7 @@ module.exports = function(app){
         // console.log(req);
         Pet.createPet(req, res);
     });
-    app.get('/pet/:id', function(req, res) {
+    app.get('/pet/detail/:id', function(req, res) {
         console.log('inside udpate of pet');
         Pet.retrieveOnePet(req, res);
     });
