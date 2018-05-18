@@ -2,7 +2,6 @@
 /node_modules
 /client/
 # compiled output
-/dist
 /tmp
 /out-tsc
 
