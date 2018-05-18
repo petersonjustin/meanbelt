@@ -1,0 +1,20 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<header id='' class='header container'>
+    <div style="text-align:center">
+        <h1>
+            Welcome to {{ title }}!
+        </h1>
+    </div>
+    <nav class="navbar navbar-light bg-light">
+        <!-- <a [routerLink]="['/']">Home</a> -->
+        <a [routerLink]="['/pets']">Pet List</a>
+        <a [routerLink]="['/pet/create']">Add a New Pet</a>
+    </nav>
+</header>
+<main id='' class='container main'>
+   <p style="text-align: center;">Welcome to the Pet Adption Site - checkout our pet list or add a new pet!</p>
+    <router-outlet></router-outlet>
+</main>
+<footer id='' class='footer'>
+</footer>

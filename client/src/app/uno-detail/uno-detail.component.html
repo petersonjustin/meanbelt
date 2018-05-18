@@ -1,0 +1,51 @@
+
+<div class="row">
+    <div class="col-12">
+        <h3>Pets Available for Adoption</h3>
+        <h5>Details about {{singlePet.name}}</h5>
+    </div>
+    <div class="col-12">
+        <div class="row">
+            <div class="col-3">
+                <h5>Pet Type:</h5>
+            </div>
+            <div class="col-9">
+                <p>{{singlePet.petType}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <h5>Description:</h5>
+            </div>
+            <div class="col-9">
+                <p>{{singlePet.desc}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <h5>Skills:</h5>
+            </div>
+            <div class="col-9">
+                <p>{{singlePet.skill1}}</p>
+                <p>{{singlePet.skill2}}</p>
+                <p>{{singlePet.skill3}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <h5>Likes:</h5>
+            </div>
+            <div class="col-9">
+                <p>{{singlePet.likes}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <button class="btn btn-success" (click)="deletePet(singlePet._id)">Adopt Pet</button>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-success" [disabled]="isDisabled" (click)="likePet(singlePet._id)">Like this Pet</button>
+            </div>
+        </div>
+    </div>
+</div>

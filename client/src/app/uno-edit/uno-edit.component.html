@@ -1,0 +1,126 @@
+<div class="row">
+        <div class="col-12">
+            <h3>Edit Pet: </h3>
+            <div *ngIf="bEError" >
+                <div *ngFor="let e of bEError">
+                    <p>{{e.message}}</p>
+                </div>
+            </div>
+                <form (submit)="updatePet()" #fEditPet="ngForm">
+                    <div class="row">
+                        <div class="col-7 form-group">
+                            <label for="editPet.name">Name: </label>
+                            <input
+                                type="text"
+                                [(ngModel)]="editPet.name"
+                                name="editPet.name"
+                                placeholder="..."
+                                required
+                                minlength="3"
+                                #petName="ngModel"
+                                >
+
+                                <div *ngIf="petName.invalid && (petName.dirty || petName.touched)"
+                                    class="alert alert-danger">
+                                    <div *ngIf = "petName.errors?.required">
+                                        Name field can't be blank
+                                    </div>
+                                    <div *ngIf="petName.errors.minlength">
+                                        Name must be at least {{petName.errors.minlength.requiredLength}} characters long.
+                                    </div>
+                                </div>
+
+                        </div>
+                        <div class="col-7 form-group">
+                            <label for="editPet.desc">Pet Type: </label>
+                            <input
+                                type="text"
+                                [(ngModel)]="editPet.petType"
+                                name="editPet.petType"
+                                placeholder="..."
+                                required
+                                minlength="3"
+                                #petType="ngModel"
+                                >
+                                <div *ngIf="petType.invalid && (petType.dirty || petType.touched)"
+                                    class="alert alert-danger">
+                                    <div *ngIf = "petType.errors?.required">
+                                        Pet Type field can't be blank
+                                    </div>
+                                    <div *ngIf="petType.errors.minlength">
+                                        Pet Type must be at least {{petType.errors.minlength.requiredLength}} characters long.
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col-7 form-group">
+                            <label for="editPet.desc">Description: </label>
+                            <input
+                                type="text"
+                                [(ngModel)]="editPet.desc"
+                                name="editPet.desc"
+                                placeholder="..."
+                                required
+                                minlength="3"
+                                #petDesc="ngModel"
+                                >
+                                <div *ngIf="petDesc.invalid && (petDesc.dirty || petDesc.touched)"
+                                    class="alert alert-danger">
+                                    <div *ngIf = "petDesc.errors?.required">
+                                        Description field can't be blank
+                                    </div>
+                                    <div *ngIf="petDesc.errors.minlength">
+                                        Description must be at least {{petDesc.errors.minlength.requiredLength}} characters long.
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col-7">
+                            <h4>Skills: (Optional)</h4>
+                        </div>
+                        <div class="col-7 form-group">
+                            <label for="editPet.skill1">Skill 1: </label>
+                            <input
+                                type="text"
+                                [(ngModel)]="editPet.skill1"
+                                name="editPet.skill1"
+                                placeholder="..."
+                                >
+                        </div>
+                        <div class="col-7 form-group">
+                            <label for="editPet.skill2">Skill 2: </label>
+                            <input
+                                type="text"
+                                [(ngModel)]="editPet.skill2"
+                                name="editPet.skill2"
+                                placeholder="..."
+                                >
+                        </div>
+                        <div class="col-7 form-group">
+                            <label for="editPet.skill3">Skill 3: </label>
+                            <input
+                                type="text"
+                                [(ngModel)]="editPet.skill3"
+                                name="editPet.skill3"
+                                placeholder="..."
+                                >
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <button
+                                type="submit"
+                                class="btn btn-success"
+                                > Edit Pet </button>
+                        </div>
+                        <div class="col-3">
+                            <button
+                                [routerLink]="['/pet', editPet._id]"
+                                class="btn btn-warning"
+                                > Cancel</button>
+                        </div>
+                    </div>
+                </form>
+
+        </div>
+    </div>
